@@ -1,38 +1,30 @@
-// Load Header
+// script.js - Versión corregida
 document.addEventListener('DOMContentLoaded', () => {
+    // Cargar header
     fetch('components/header.html')
-    .then(response => {
-        if (!response.ok) throw new Error('Network response was not ok');
-        return response.text();
-    })
-    .then(html => {
-        document.getElementById('header-container').innerHTML = html;
-        initMobileMenu();
-    })
-    .catch(error => console.error('Error loading header:', error));
-});
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(html => {
+            document.getElementById('header-container').innerHTML = html;
+            setupMobileMenu(); // Cambiado el nombre para evitar conflicto
+        })
+        .catch(error => console.error('Error loading header:', error));
 
-// Mobile menu
-function initMobileMenu() {
-    const menuBtn = document.querySelector('.menu-btn');
-    const navMenu = document.querySelector('.menu');
+    // Configurar menú móvil
+    function setupMobileMenu() {
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
 
-    if (menuBtn && navMenu) {
-        menuBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
+        if (menuBtn && navMenu) {
+            menuBtn.addEventListener('click', () => {
+                const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+                menuBtn.setAttribute('aria-expanded', !isExpanded);
+                navMenu.classList.toggle('active');
+                // Cambiar ícono
+                menuBtn.textContent = isExpanded ? '☰' : '✖';
+            });
+        }
     }
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    const menuBtn = document.querySelector('.mobile-menu-btn');
-    const mainNav = document.querySelector('.main-nav');
-
-    menuBtn.addEventListener('click', () => {
-        const isExpanded = menuBtn.getAttribute('aria-expanded')=== 'true';
-        menuBtn.setAttribute('aria-expanded', !isExpanded);
-        mainNav.classList.toggle('expanded');
-        // Change icon
-        menuBtn.textContent = isExpanded ? '☰' : '✖';
-    });
 });

@@ -11,8 +11,9 @@
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-	<div id="header-container"></div>
+	<div id="header-container"></div> <!-- Aquí se cargará el header dinámicamente -->
 	<main>
+		<!-- Hero Section -->
 		<section id="home" class="hero-section">
 			<div class="hero-content">
 				<h1>Protege los ecosistemas cercanos</h1>
@@ -20,33 +21,42 @@
 				<a href="#guides" class="primary-btn">Explora las guías</a>
 			</div>
 		</section>
+
+		<!-- Guides Section -->
 		<section id="guides" class="guides-section">
 			<h2>Guías sostenibles</h2>
 			<div class="card-container">
+				<!-- Compostaje Card -->
 				<article class="guide-card">
+					<img src="assets/img/compostaje.jpg" alt="Compostaje Doméstico" class="guide-img">
 					<h3>Compostaje Doméstico</h3>
-					<p>Transforma tus residuos orgánicos en abono natural.</p>
-					<a href="#" class="secondary-btn">Ver guía</a>
+					<p>Transforma tus residuos orgánicos en abono natural. Aprende cómo crear tu propio compost.</p>
+					<a href="https://www.youtube.com/watch?v=_neICsDIQTY" class="secondary-btn" target="_blank">Ver video</a>
 				</article>
+
+				<!-- Jardin Vertical Card -->
 				<article class="guide-card">
-					<h3>Jardin Vertical</h3>
-					<p>Optimiza espacios pequeños con plantas</p>
-					<a href="#" class="secondary-btn">Ver guía</a>
+					<img src="assets/img/jardin-vertical.jpg" alt="Jardín Vertical" class="guide-img">
+					<h3>Jardín Vertical</h3>
+					<p>Optimiza espacios pequeños con plantas. Crea tu propio jardín vertical en casa.</p>
+					<a href="https://www.youtube.com/watch?v=Mv3pWxukBlc" class="secondary-btn" target="_blank">Ver video</a>
 				</article>
 			</div>
 		</section>
+
+		<!-- Register Section -->
 		<section id="register" class="register-section">
 			<h2>Unete a GaiaBios</h2>
-				<form id="signup-form" class="form-style">
-					<div class="input-group">
-						<label for="user-email">Correo electrónico</label>
-						<input type="email" id="user-email" name="email" placeholder="ejemplo@email.com" required>
-					</div>
-					<button type="submit" class="primary-btn">Registrarse</button>
-				</form>
-			</section>
+			<form id="signup-form" class="form-style">
+				<div class="input-group">
+					<label for="user-email">Correo electrónico</label>
+					<input type="email" id="user-email" name="email" placeholder="ejemplo@email.com" required>
+				</div>
+				<button type="submit" class="primary-btn">Registrarse</button>
+			</form>
 		</section>
 	</main>
+
 	<script src="script.js"></script>
 </body>
 </html>
